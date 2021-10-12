@@ -7,7 +7,7 @@ With FileMaker Cloud 2 however, the process is made somewhat more complex throug
 ## Installation ##
 
 ```bash
-composer require matatirosolutions/fm-cloud-authentication
+composer require matatirosoln/fm-cloud-authentication
 ```
 ## Usage ##
 
