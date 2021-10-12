@@ -1,0 +1,36 @@
+{
+  "name": "matatirosoln/fm-cloud-authenticator",
+  "description": "Authenticate against FileMaker cloud for Data API or Admin API access",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Steve Winter",
+      "email": "steve@msdev.nz"
+    }
+  ],
+  "keywords": [
+    "FileMaker",
+    "Cognito",
+    "Data API",
+    "DAPI",
+    "Admin API"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "autoload": {
+    "psr-4": {
+      "MSDev\\FMCloudAuthenticator\\": "src"
+    }
+  },
+  "require": {
+    "php": "7.4.*||8.0.*",
+    "aws/aws-sdk-php": "^3.198",
+    "guzzlehttp/guzzle": "^7.3",
+    "nesbot/carbon": "^2.53",
+    "phpseclib/phpseclib": "^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}
