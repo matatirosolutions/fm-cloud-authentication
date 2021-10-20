@@ -3,10 +3,7 @@ declare(strict_types=1);
 
 namespace MSDev\FMCloudAuthenticator;
 
-
-use Aws\CognitoIdentity\CognitoIdentityClient;
 use Aws\CognitoIdentityProvider\CognitoIdentityProviderClient;
-use DateTime;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -52,7 +49,7 @@ class Authenticate
             'credentials' => false,
         ]);
 
-            $srp = new AwsCognitoIdentitySRP(
+            $srp = new AWSCognitoIdentitySRP(
                 $cognitoClient,
                 $clarisCognitoConfigObject->data->Client_ID,
                 $clarisCognitoConfigObject->data->UserPool_ID
