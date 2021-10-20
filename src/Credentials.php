@@ -34,11 +34,6 @@ class Credentials
         $this->tokenType = $tokenType;
     }
 
-    public function getServerAddress(): string
-    {
-        return $this->serverAddress;
-    }
-
     public function getClarisIdUsername(): string
     {
         return $this->clarisIdUsername;
@@ -49,6 +44,9 @@ class Credentials
         return $this->clarisIdPassword;
     }
 
+    /**
+     * @throws AuthenticationException
+     */
     public function getSessionEndpoint(): string
     {
         $base = $this->verifyAddress();
@@ -59,15 +57,19 @@ class Credentials
 
             return sprintf('%s/fmi/data/vLatest/databases/%s/sessions', $base, $this->database);
         }
-
-
+        if(self::ADMIN === $this->tokenType) {
+            throw new AuthenticationException('Currently only DAPI tokens are supported');
+        }
+        throw new AuthenticationException(
+            sprintf("Unknown token type'%s' requested", $this->tokenType)
+        );
     }
 
     private function verifyAddress(): string
     {
         $address = $this->serverAddress;
         if(strpos($this->serverAddress, 'http') !== 0) {
-            $address = 'http://' . $this->serverAddress;
+            $address = 'https://' . $this->serverAddress;
         }
 
         if('/' === substr($this->serverAddress, -1)) {
