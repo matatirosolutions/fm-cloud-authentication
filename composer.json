@@ -1,5 +1,5 @@
 {
-  "name": "matatirosoln/fm-cloud-authenticator",
+  "name": "matatirosoln/fm-cloud-authentication",
   "description": "Authenticate against FileMaker cloud for Data API or Admin API access",
   "type": "library",
   "authors": [
