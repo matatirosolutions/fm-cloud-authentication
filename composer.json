@@ -24,7 +24,7 @@
     }
   },
   "require": {
-    "php": "7.4.*||8.0.*||8.1.*",
+    "php": "7.4.*||8.0.*||8.1.*||8.2.*",
     "aws/aws-sdk-php": "^3.198",
     "guzzlehttp/guzzle": "^7.3",
     "nesbot/carbon": "^2.53",
